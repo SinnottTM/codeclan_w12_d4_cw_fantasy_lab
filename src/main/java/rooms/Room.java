@@ -1,23 +1,25 @@
 package rooms;
 
+import enemies.Enemy;
+import loot.Loot;
+
 import java.util.ArrayList;
 
-public class Room {
+public abstract class Room {
 
     private String name;
-//    private String location;
+    private int roomNumber;
     private ArrayList<Direction> directions;
-    private ArrayList<Enemies> enemies;
-    private ArrayList<Loot> loot;
+    private ArrayList<Enemy> enemies;
+    private int loot;
 
-    public Room(String name, ArrayList enemies, ArrayList loot){
+    public Room(String name, int roomNumber, ArrayList enemies, ArrayList directions, int loot){
         this.name = name;
-//        this.location = location;
+        this.roomNumber = roomNumber;
         this.directions = new ArrayList<>();
-        this.enemies = new ArrayList<Enemies>();
-        this.loot = new ArrayList<Loot>();
+        this.enemies = new ArrayList<>();
+        this.loot = loot;
     }
-
 
     public String getName() {
         return name;
@@ -27,14 +29,6 @@ public class Room {
         this.name = name;
     }
 
-//    public String getLocation() {
-//        return location;
-//    }
-//
-//    public void setLocation(String location) {
-//        this.location = location;
-//    }
-
     public ArrayList<Direction> getDirections() {
         return directions;
     }
@@ -43,19 +37,27 @@ public class Room {
         this.directions = directions;
     }
 
-    public ArrayList<Enemies> getEnemies() {
+    public ArrayList<Enemy> getEnemies() {
         return enemies;
     }
 
-    public void setEnemies(ArrayList<Enemies> enemies) {
+    public void setEnemies(ArrayList<Enemy> enemies) {
         this.enemies = enemies;
     }
 
-    public ArrayList<Loot> getLoot() {
+    public int getLoot() {
         return loot;
     }
 
-    public void setLoot(ArrayList<Loot> loot) {
+    public void setLoot(int loot) {
         this.loot = loot;
+    }
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 }
