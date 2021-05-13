@@ -14,8 +14,8 @@ public class MonstersDen extends Room{
     private Noble noble1;
     private Loot GEMS;
 
-    public MonstersDen(String name, int roomNumber, ArrayList enemies, java.util.ArrayList directions, int loot) {
-        super(name, roomNumber, enemies, directions, loot);
+    public MonstersDen(String name, int roomNumber, ArrayList enemies, int loot) {
+        super(name, roomNumber, enemies, loot);
         setName("Treasure Room");
         setRoomNumber(1);
         enemies.add(motherFairy1);
